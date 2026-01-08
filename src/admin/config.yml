@@ -411,7 +411,9 @@ collections:
                {label: "Hero Title", name: "hero_title", widget: "string"},
                {label: "Content", name: "content", widget: "markdown"}
              ]}
-              {label: "Hero Title", name: "hero_title", widget: "string"},
+          - {label: "Spanish Content", name: "es", widget: "object", fields: [
+               {label: "Title", name: "title", widget: "string"},
+               {label: "Hero Title", name: "hero_title", widget: "string"},
                {label: "Content", name: "content", widget: "markdown"}
              ]}
 
