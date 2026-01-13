@@ -42,6 +42,9 @@
 
 <body class="antialiased selection:bg-orange-100 selection:text-orange-900 home-page">
 
+  <!-- Announcement Bar Container -->
+  <div id="site-announcement"></div>
+
   <!-- Shared Nav Container -->
   <div id="site-nav"></div>
 
@@ -103,42 +106,74 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16 max-w-3xl mx-auto">
           <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">What We Do</span>
-          <h2 class="text-4xl font-serif leading-tight text-neutral-900">Comprehensive Support for Newcomers</h2>
+          <h2 class="text-4xl font-serif leading-tight text-neutral-900">Comprehensive Support for Immigrants</h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div class="p-8 border border-neutral-100 hover:border-orange-600 transition-colors group">
-            <i data-lucide="home"
-              class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 mb-6 transition-colors"></i>
-            <h3 class="text-2xl font-serif mb-4">Housing Support</h3>
-            <p class="text-neutral-600 font-light mb-6">Transitional housing via our Host Home program, providing 90
-              days of stability.</p>
-            <a href="/pages/programs.html"
-              class="text-xs font-bold uppercase tracking-widest border-b border-neutral-200 pb-1 group-hover:border-orange-600 transition-colors">Learn
-              More</a>
+          <!-- Card 1: Housing Support -->
+          <div
+            class="service-card p-8 border border-neutral-100 hover:border-orange-600 transition-all group cursor-pointer"
+            onclick="toggleServiceCard(this)">
+            <div class="flex items-center justify-between mb-4">
+              <i data-lucide="home"
+                class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 transition-colors"></i>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 expand-icon transition-transform"></i>
+            </div>
+            <h3 class="text-2xl font-serif mb-2">Housing Support</h3>
+            <p class="service-summary text-neutral-600 font-light text-sm">Transitional housing for 90 days of
+              stability.</p>
+            <div class="service-details hidden mt-4 pt-4 border-t border-neutral-100">
+              <p class="text-neutral-600 font-light mb-4">Our Host Home program connects families with compassionate
+                community members who open their homes to provide safe, transitional housing. Participants receive up to
+                90 days of stability while they work toward independence.</p>
+              <a href="/pages/programs.html"
+                class="text-xs font-bold uppercase tracking-widest text-orange-600 hover:text-black transition-colors">Learn
+                More →</a>
+            </div>
           </div>
-          <!-- Card 2 -->
-          <div class="p-8 border border-neutral-100 hover:border-orange-600 transition-colors group">
-            <i data-lucide="scale"
-              class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 mb-6 transition-colors"></i>
-            <h3 class="text-2xl font-serif mb-4">Legal Navigation</h3>
-            <p class="text-neutral-600 font-light mb-6">Pro se asylum clinics, work permit applications, and legal
-              document support.</p>
-            <a href="/pages/programs.html"
-              class="text-xs font-bold uppercase tracking-widest border-b border-neutral-200 pb-1 group-hover:border-orange-600 transition-colors">Learn
-              More</a>
+
+          <!-- Card 2: Legal Navigation -->
+          <div
+            class="service-card p-8 border border-neutral-100 hover:border-orange-600 transition-all group cursor-pointer"
+            onclick="toggleServiceCard(this)">
+            <div class="flex items-center justify-between mb-4">
+              <i data-lucide="scale"
+                class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 transition-colors"></i>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 expand-icon transition-transform"></i>
+            </div>
+            <h3 class="text-2xl font-serif mb-2">Legal Navigation</h3>
+            <p class="service-summary text-neutral-600 font-light text-sm">Pro se clinics, work permits, and document
+              support.</p>
+            <div class="service-details hidden mt-4 pt-4 border-t border-neutral-100">
+              <p class="text-neutral-600 font-light mb-4">We guide asylum-seekers through the complex legal process with
+                pro se clinics, work permit applications, and document preparation support. Our volunteers help families
+                understand their rights and navigate the system.</p>
+              <a href="/pages/programs.html"
+                class="text-xs font-bold uppercase tracking-widest text-orange-600 hover:text-black transition-colors">Learn
+                More →</a>
+            </div>
           </div>
-          <!-- Card 3 -->
-          <div class="p-8 border border-neutral-100 hover:border-orange-600 transition-colors group">
-            <i data-lucide="users"
-              class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 mb-6 transition-colors"></i>
-            <h3 class="text-2xl font-serif mb-4">Community Integration</h3>
-            <p class="text-neutral-600 font-light mb-6">Connecting newcomers to local service projects to build resume
-              skills and community.</p>
-            <a href="/pages/programs.html"
-              class="text-xs font-bold uppercase tracking-widest border-b border-neutral-200 pb-1 group-hover:border-orange-600 transition-colors">Learn
-              More</a>
+
+          <!-- Card 3: Community Integration -->
+          <div
+            class="service-card p-8 border border-neutral-100 hover:border-orange-600 transition-all group cursor-pointer"
+            onclick="toggleServiceCard(this)">
+            <div class="flex items-center justify-between mb-4">
+              <i data-lucide="users"
+                class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 transition-colors"></i>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 expand-icon transition-transform"></i>
+            </div>
+            <h3 class="text-2xl font-serif mb-2">Community Integration</h3>
+            <p class="service-summary text-neutral-600 font-light text-sm">Local service projects for skills and
+              community.</p>
+            <div class="service-details hidden mt-4 pt-4 border-t border-neutral-100">
+              <p class="text-neutral-600 font-light mb-4">Through our HOPE Community Service program, immigrants and
+                asylum-seekers connect with local organizations to build resume skills, practice English, and become
+                part of the Denver community.</p>
+              <a href="/pages/programs.html"
+                class="text-xs font-bold uppercase tracking-widest text-orange-600 hover:text-black transition-colors">Learn
+                More →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -186,15 +221,18 @@
             <h4 class="font-serif text-2xl mb-4">Impact Snapshot</h4>
             <div class="space-y-6">
               <div>
-                <span class="text-3xl font-bold text-orange-500 block mb-1">300+</span>
+                <span class="counter text-3xl font-bold text-orange-500 block mb-1" data-target="300"
+                  data-suffix="+">0</span>
                 <span class="text-sm text-neutral-400 uppercase tracking-widest">Families Housed</span>
               </div>
               <div>
-                <span class="text-3xl font-bold text-orange-500 block mb-1">1,500+</span>
+                <span class="counter text-3xl font-bold text-orange-500 block mb-1" data-target="1500"
+                  data-suffix="+">0</span>
                 <span class="text-sm text-neutral-400 uppercase tracking-widest">Legal Forms Filed</span>
               </div>
               <div>
-                <span class="text-3xl font-bold text-orange-500 block mb-1">5,000+</span>
+                <span class="counter text-3xl font-bold text-orange-500 block mb-1" data-target="5000"
+                  data-suffix="+">0</span>
                 <span class="text-sm text-neutral-400 uppercase tracking-widest">Meals Provided</span>
               </div>
               <p class="text-xs text-neutral-500 mt-6 italic">* Approximate metrics reflecting 2024 goals and impact.
@@ -205,13 +243,94 @@
       </div>
     </section>
 
-    <section class="py-24 bg-neutral-50">
-      <div class="container mx-auto px-6 max-w-4xl text-center">
-        <i data-lucide="heart" class="w-6 h-6 text-orange-600 mx-auto mb-10 animate-pulse"></i>
-        <h2 class="text-3xl md:text-5xl font-serif leading-snug text-neutral-900 mb-10 text-balance">"To provide
-          humanitarian aid and support to immigrants and asylum seekers, fostering a community where everyone has the
-          opportunity to thrive."</h2>
+    <!-- 5. Stories of Hope - Testimonials -->
+    <section class="py-24 bg-white" id="testimonials-section">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">Voices from Our
+            Community</span>
+          <h2 class="text-4xl font-serif leading-tight text-neutral-900">Stories of Hope</h2>
+        </div>
+
+        <!-- Testimonial Carousel -->
+        <div class="testimonial-carousel relative min-h-[280px]" id="testimonial-carousel">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide active" data-slide="0">
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div class="w-24 h-24 rounded-full bg-neutral-200 flex-shrink-0 overflow-hidden">
+                <div
+                  class="w-full h-full bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
+                  <i data-lucide="user" class="w-12 h-12 text-white"></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <blockquote class="text-xl md:text-2xl font-serif text-neutral-700 mb-4 italic leading-relaxed">
+                  "Hope Has No Borders helped my family find stable housing and navigate the asylum process. We finally
+                  have hope for the future."
+                </blockquote>
+                <p class="text-sm text-neutral-500 font-medium">— Maria G., Denver, CO</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide" data-slide="1">
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div class="w-24 h-24 rounded-full bg-neutral-200 flex-shrink-0 overflow-hidden">
+                <div
+                  class="w-full h-full bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
+                  <i data-lucide="user" class="w-12 h-12 text-white"></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <blockquote class="text-xl md:text-2xl font-serif text-neutral-700 mb-4 italic leading-relaxed">
+                  "The legal clinics changed everything for us. I now have my work permit and can provide for my
+                  children."
+                </blockquote>
+                <p class="text-sm text-neutral-500 font-medium">— Carlos R., Aurora, CO</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide" data-slide="2">
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div class="w-24 h-24 rounded-full bg-neutral-200 flex-shrink-0 overflow-hidden">
+                <div
+                  class="w-full h-full bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
+                  <i data-lucide="user" class="w-12 h-12 text-white"></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <blockquote class="text-xl md:text-2xl font-serif text-neutral-700 mb-4 italic leading-relaxed">
+                  "When we arrived, we had nothing. The Host Home program gave us 90 days of safety and the support to
+                  rebuild our lives."
+                </blockquote>
+                <p class="text-sm text-neutral-500 font-medium">— Ana L., Denver, CO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="flex justify-center gap-3 mt-8" id="testimonial-dots">
+          <button class="w-3 h-3 rounded-full bg-orange-600 transition-colors" data-dot="0"
+            aria-label="Go to testimonial 1"></button>
+          <button class="w-3 h-3 rounded-full bg-neutral-300 hover:bg-orange-400 transition-colors" data-dot="1"
+            aria-label="Go to testimonial 2"></button>
+          <button class="w-3 h-3 rounded-full bg-neutral-300 hover:bg-orange-400 transition-colors" data-dot="2"
+            aria-label="Go to testimonial 3"></button>
+        </div>
       </div>
+    </section>
+
+    <!-- 6. Mission Quote -->
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <i data-lucide="heart" class="w-6 h-6 text-orange-600 mx-auto mb-10 animate-pulse"></i>
+      <h2 class="text-3xl md:text-5xl font-serif leading-snug text-neutral-900 mb-10 text-balance">"To provide
+        humanitarian aid and support to immigrants and asylum seekers, fostering a community where everyone has the
+        opportunity to thrive."</h2>
+    </div>
     </section>
   </main>
 

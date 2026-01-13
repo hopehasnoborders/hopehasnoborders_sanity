@@ -1,5 +1,7 @@
 # Hope Has No Borders
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9836833c-3963-4d4c-8d2f-f295244521d7/deploy-status)](https://app.netlify.com/projects/hopehasnoborders/deploys)
+
 A grassroots response to the humanitarian crisis in Denver, bridging the gap from crisis to stability through housing, legal aid, and dignity.
 
 This is a static website built with HTML, CSS (Tailwind via CDN for prototyping/quick edits, can be built if needed), and vanilla JavaScript.
@@ -26,15 +28,16 @@ hope-has-no-borders/
 3.  Use "Live Server" extension (or `python -m http.server`, or `npx serve`) to view `index.html`.
     *   **Note**: Simply opening the file in the browser (`file://...`) might work, but relative links and fonts are best served over a local server.
 
-## How to Deploy (GitHub Pages)
+## How to Deploy (Netlify)
 
-This structure is optimized for GitHub Pages.
+This project is configured for deployment on Netlify.
 
-1.  Push the code to GitHub.
-2.  Go to **Settings > Pages**.
-3.  Select **Source** as `Deploy from a branch`.
-4.  Select the branch (e.g. `main`) and folder `/(root)`.
-5.  Save. Your site will be live at `https://your-user-name.github.io/hope-has-no-borders/`.
+1.  Push the code to your GitHub repository.
+2.  Connect the repository to Netlify.
+3.  Netlify will automatically detect the `netlify.toml` and use the following settings:
+    *   **Build command**: `npm run build` (runs `npx @11ty/eleventy`)
+    *   **Publish directory**: `_site`
+4.  The site will be live at your Netlify subdomain (e.g., `hopehasnoborders.netlify.app`).
 
 ## Updating Content
 

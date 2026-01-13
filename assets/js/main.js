@@ -1,11 +1,19 @@
 (function () {
-    // 1. Load Partials (Nav & Footer)
+    // 1. Load Partials (Announcement Bar, Nav & Footer)
     async function loadPartials() {
         try {
-            // Determine path to partials based on current location
-            // Since we are using simple fetch, we need to know where /partials is relative to current page
-            // BUT, if we use a web server (localhost:8080), absolute paths /partials/... work.
-            // We assume site is served from root.
+            // Load Announcement Bar (only if not dismissed)
+            const announcementDismissed = localStorage.getItem('hhnb-announcement-dismissed');
+            if (!announcementDismissed) {
+                const announcementRes = await fetch('/partials/announcement-bar.html');
+                if (announcementRes.ok) {
+                    const announcementHtml = await announcementRes.text();
+                    const announcementContainer = document.getElementById('site-announcement');
+                    if (announcementContainer) {
+                        announcementContainer.innerHTML = announcementHtml;
+                    }
+                }
+            }
 
             const navRes = await fetch('/partials/nav.html');
             if (navRes.ok) {
@@ -29,9 +37,187 @@
                 window.lucide.createIcons();
             }
 
+            // Initialize counters after DOM is ready
+            initCounters();
+
         } catch (e) {
             console.error("Error loading partials:", e);
         }
+    }
+
+    // Announcement Bar Dismiss Function (global)
+    window.dismissAnnouncement = function () {
+        const bar = document.getElementById('announcement-bar');
+        if (bar) {
+            bar.style.transform = 'translateY(-100%)';
+            bar.style.opacity = '0';
+            setTimeout(() => {
+                bar.remove();
+            }, 300);
+        }
+        localStorage.setItem('hhnb-announcement-dismissed', 'true');
+    };
+
+    // Expandable Service Cards (global)
+    window.toggleServiceCard = function (card) {
+        const details = card.querySelector('.service-details');
+        const summary = card.querySelector('.service-summary');
+        const icon = card.querySelector('.expand-icon');
+
+        if (details.classList.contains('hidden')) {
+            details.classList.remove('hidden');
+            if (summary) summary.classList.add('hidden');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+            card.classList.add('border-orange-600');
+        } else {
+            details.classList.add('hidden');
+            if (summary) summary.classList.remove('hidden');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+            card.classList.remove('border-orange-600');
+        }
+
+        // Re-init icons in case new ones are visible
+        if (window.lucide) window.lucide.createIcons();
+    };
+
+    // Animated Counters
+    function initCounters() {
+        const counters = document.querySelectorAll('.counter');
+        if (counters.length === 0) return;
+
+        const animateCounter = (el) => {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 2000; // 2 seconds
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.floor(target * easeOut);
+                el.textContent = currentValue.toLocaleString() + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.textContent = target.toLocaleString() + suffix;
+                }
+            }
+            requestAnimationFrame(updateCounter);
+        };
+
+        // Use IntersectionObserver to trigger animation when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+    }
+
+    // Testimonial Carousel
+    function initTestimonialCarousel() {
+        const carousel = document.getElementById('testimonial-carousel');
+        const dotsContainer = document.getElementById('testimonial-dots');
+        if (!carousel || !dotsContainer) return;
+
+        const slides = carousel.querySelectorAll('.testimonial-slide');
+        const dots = dotsContainer.querySelectorAll('[data-dot]');
+        let currentSlide = 0;
+        let autoplayInterval;
+
+        function goToSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-orange-600', i === index);
+                dot.classList.toggle('bg-neutral-300', i !== index);
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            goToSlide((currentSlide + 1) % slides.length);
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        // Dot click handlers
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.getAttribute('data-dot'), 10));
+                stopAutoplay();
+                startAutoplay();
+            });
+        });
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+
+        startAutoplay();
+    }
+
+    // Initialize testimonials after partials load
+    const originalLoadPartials = loadPartials;
+    loadPartials = async function () {
+        await originalLoadPartials.call(this);
+        initTestimonialCarousel();
+        initLanguageToggle();
+    };
+
+    // Language Toggle Logic
+    function initLanguageToggle() {
+        const toggles = document.querySelectorAll('.lang-toggle');
+        if (toggles.length === 0) return;
+
+        const currentPath = window.location.pathname;
+        const isSpanish = currentPath.startsWith('/es/') || currentPath === '/es';
+        const currentLang = isSpanish ? 'es' : 'en';
+        const targetLang = isSpanish ? 'en' : 'es';
+
+        toggles.forEach(toggle => {
+            const lang = toggle.getAttribute('data-lang');
+
+            // Highlight current language
+            if (lang === currentLang) {
+                toggle.classList.add('font-bold', 'text-orange-600');
+            }
+
+            // Set href for language switch
+            if (lang === targetLang) {
+                let newPath;
+                if (isSpanish) {
+                    // Currently on Spanish, switch to English
+                    newPath = currentPath.replace('/es/', '/en/').replace('/es', '/en');
+                } else {
+                    // Currently on English, switch to Spanish
+                    newPath = currentPath.replace('/en/', '/es/').replace('/en', '/es');
+                }
+                // Handle root path case
+                if (currentPath === '/' || currentPath === '/index.html') {
+                    newPath = lang === 'es' ? '/es/' : '/en/';
+                }
+                toggle.setAttribute('href', newPath);
+            } else {
+                // Current language link goes to current page
+                toggle.setAttribute('href', currentPath);
+            }
+        });
     }
 
     // 2. Nav Logic (Mobile Menu, Scroll, Active State)

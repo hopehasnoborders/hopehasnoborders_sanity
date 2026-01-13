@@ -21,3 +21,33 @@ layout: layouts/base.njk
         <a href="{{ donate[lang].cta_link }}" target="_blank" class="inline-block bg-orange-600 text-white px-12 py-5 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors shadow-xl">{{ donate[lang].cta_text }}</a>
     </div>
 </section>
+
+<!-- Shop Section -->
+<section class="py-24 bg-neutral-50 border-t border-neutral-200">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+            <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">{{ donate[lang].shop_subtitle }}</span>
+            <h2 class="text-4xl font-serif leading-tight text-neutral-900">{{ donate[lang].shop_title }}</h2>
+        </div>
+
+        <div class="grid md:grid-cols-1 gap-8 max-w-md mx-auto">
+            {% for item in donate[lang].shop_items %}
+            <div class="bg-white rounded-sm shadow-lg overflow-hidden border border-neutral-100 hover:shadow-xl transition-shadow">
+                <div class="aspect-square bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                    <div class="text-center p-8">
+                        <i data-lucide="shopping-bag" class="w-16 h-16 text-orange-400 mx-auto mb-4"></i>
+                        <span class="text-orange-600 font-bold text-lg">{{ item.name }}</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-serif mb-2">{{ item.name }}</h3>
+                    <p class="text-neutral-600 font-light text-sm mb-4">{{ item.description }}</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">{{ item.price }}</p>
+                    <a href="{{ item.cta_link }}" target="_blank" class="inline-block bg-orange-600 text-white px-8 py-3 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-black transition-colors w-full">{{ item.cta_text }}</a>
+                    <p class="text-xs text-neutral-500 mt-4 italic">* We'll collect your shipping address after donation</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

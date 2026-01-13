@@ -8,7 +8,19 @@
         "hero_text": "Your contribution directly supports housing, legal aid, and emergency relief for families in crisis.",
         "body_text": "We rely on the generosity of our community to continue our work. Every dollar goes towards stabilizing lives and building a stronger, more inclusive Denver.",
         "cta_text": "Donate via PayPal",
-        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L"
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L",
+        "shop_title": "Shop + Support",
+        "shop_subtitle": "Get something back while giving forward",
+        "shop_items": [
+            {
+                "name": "Denver Tote Bag",
+                "description": "Handmade by asylum-seekers in our community service program. A symbol of hope and resilience.",
+                "price": "$25",
+                "image": "/assets/img/shop/tote-placeholder.jpg",
+                "cta_text": "Donate $25 + Get Tote",
+                "cta_link": "https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L"
+            }
+        ]
     },
     "es": {
         "title": "Donar - Hope Has No Borders",
@@ -18,6 +30,18 @@
         "hero_text": "Su contribución apoya directamente la vivienda, la asistencia legal y la ayuda de emergencia para familias en crisis.",
         "body_text": "Dependemos de la generosidad de nuestra comunidad para continuar nuestro trabajo. Cada dólar se destina a estabilizar vidas y construir un Denver más fuerte e inclusivo.",
         "cta_text": "Donar vía PayPal",
-        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L"
+        "cta_link": "https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L",
+        "shop_title": "Tienda + Apoyo",
+        "shop_subtitle": "Reciba algo mientras da hacia adelante",
+        "shop_items": [
+            {
+                "name": "Bolsa de Denver",
+                "description": "Hecha a mano por solicitantes de asilo en nuestro programa de servicio comunitario. Un símbolo de esperanza y resiliencia.",
+                "price": "$25",
+                "image": "/assets/img/shop/tote-placeholder.jpg",
+                "cta_text": "Donar $25 + Obtener Bolsa",
+                "cta_link": "https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L"
+            }
+        ]
     }
 }

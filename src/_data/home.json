@@ -9,7 +9,7 @@
         "video_quote": "\"We are moms, neighbors, and community members bridging the gap from crisis to stability.\"",
         "video_url": "https://www.youtube.com/embed/mh9w6QWdtf8?title=Hope Has No Borders Mission Video",
         "services_title": "What We Do",
-        "services_heading": "Comprehensive Support for Newcomers",
+        "services_heading": "Comprehensive Support for Immigrants",
         "services": [
             {
                 "icon": "home",
@@ -26,7 +26,7 @@
             {
                 "icon": "users",
                 "title": "Community Integration",
-                "description": "Connecting newcomers to local service projects to build resume skills and community.",
+                "description": "Connecting immigrants and asylum-seekers to local service projects to build resume skills and community.",
                 "link": "/en/programs/"
             }
         ],

@@ -2,13 +2,13 @@
     "layout": "layouts/base.njk",
     "en": {
         "title": "Resources - Hope Has No Borders",
-        "description": "Guides, legal information, and local support networks for newcomers in Denver.",
+        "description": "Guides, legal information, and local support networks for immigrants and asylum-seekers in Denver.",
         "hero_label": "Community Support",
-        "hero_title": "Migrant Resources",
-        "hero_text": "Guides, legal information, and local support networks for newcomers in Denver.",
+        "hero_title": "Immigrant Resources",
+        "hero_text": "Guides, legal information, and local support networks for immigrants and asylum-seekers in Denver.",
         "resources_list": [
             {
-                "title": "Denver Newcomer Guide",
+                "title": "Denver Immigrant Guide",
                 "desc": "A comprehensive guide to navigating life in Denver, including housing, transport, and schools.",
                 "icon": "map",
                 "cta": "Download PDF",
@@ -34,8 +34,8 @@
         "title": "Recursos - Hope Has No Borders",
         "description": "Guías, información legal y redes de apoyo local para recién llegados en Denver.",
         "hero_label": "Apoyo Comunitario",
-        "hero_title": "Recursos para Migrantes",
-        "hero_text": "Guías, información legal y redes de apoyo local para recién llegados en Denver.",
+        "hero_title": "Recursos para Inmigrantes",
+        "hero_text": "Guías, información legal y redes de apoyo local para inmigrantes y solicitantes de asilo en Denver.",
         "resources_list": [
             {
                 "title": "Guía para Recién Llegados a Denver",

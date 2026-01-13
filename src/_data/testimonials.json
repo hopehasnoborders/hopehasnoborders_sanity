@@ -1,0 +1,54 @@
+{
+    "en": {
+        "section_title": "Stories of Hope",
+        "section_subtitle": "Voices from Our Community",
+        "testimonials": [
+            {
+                "quote": "Hope Has No Borders helped my family find stable housing and navigate the asylum process. We finally have hope for the future.",
+                "name": "Maria G.",
+                "location": "Denver, CO",
+                "photo": "/assets/img/testimonials/placeholder-1.jpg"
+            },
+            {
+                "quote": "The legal clinics changed everything for us. I now have my work permit and can provide for my children.",
+                "name": "Carlos R.",
+                "location": "Aurora, CO",
+                "photo": "/assets/img/testimonials/placeholder-2.jpg"
+            },
+            {
+                "quote": "When we arrived, we had nothing. The Host Home program gave us 90 days of safety and the support to rebuild our lives.",
+                "name": "Ana L.",
+                "location": "Denver, CO",
+                "photo": "/assets/img/testimonials/placeholder-3.jpg"
+            }
+        ],
+        "cta_text": "Read More Stories",
+        "cta_link": "/pages/stories.html"
+    },
+    "es": {
+        "section_title": "Historias de Esperanza",
+        "section_subtitle": "Voces de Nuestra Comunidad",
+        "testimonials": [
+            {
+                "quote": "Hope Has No Borders ayudó a mi familia a encontrar vivienda estable y navegar el proceso de asilo. Finalmente tenemos esperanza para el futuro.",
+                "name": "María G.",
+                "location": "Denver, CO",
+                "photo": "/assets/img/testimonials/placeholder-1.jpg"
+            },
+            {
+                "quote": "Las clínicas legales lo cambiaron todo para nosotros. Ahora tengo mi permiso de trabajo y puedo mantener a mis hijos.",
+                "name": "Carlos R.",
+                "location": "Aurora, CO",
+                "photo": "/assets/img/testimonials/placeholder-2.jpg"
+            },
+            {
+                "quote": "Cuando llegamos, no teníamos nada. El programa Host Home nos dio 90 días de seguridad y el apoyo para reconstruir nuestras vidas.",
+                "name": "Ana L.",
+                "location": "Denver, CO",
+                "photo": "/assets/img/testimonials/placeholder-3.jpg"
+            }
+        ],
+        "cta_text": "Leer Más Historias",
+        "cta_link": "/es/stories/"
+    }
+}

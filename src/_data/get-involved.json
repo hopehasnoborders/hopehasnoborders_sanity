@@ -19,7 +19,7 @@
                 "id": "partners",
                 "icon": "handshake",
                 "title": "Nonprofit Partners",
-                "desc": "Collaborate with our HOPE Community Service program to stabilize, educate, and empower newcomers through partnerships.",
+                "desc": "Collaborate with our HOPE Community Service program to stabilize, educate, and empower immigrants and asylum-seekers through partnerships.",
                 "cta": "Partner With Us",
                 "link": "mailto:hopehasnoborders@gmail.com?subject=Partnership%20Inquiry"
             },
@@ -27,7 +27,7 @@
                 "id": "business",
                 "icon": "briefcase",
                 "title": "Business Leaders",
-                "desc": "Provide training, internships, or hire work-authorized newcomers. Engage in corporate matching and employee giving.",
+                "desc": "Provide training, internships, or hire work-authorized immigrants and asylum-seekers. Engage in corporate matching and employee giving.",
                 "cta": "Become a Partner",
                 "link": "mailto:hopehasnoborders@gmail.com?subject=Corporate%20Engagement"
             },
@@ -64,7 +64,7 @@
                 "id": "partners",
                 "icon": "handshake",
                 "title": "Socios sin Fines de Lucro",
-                "desc": "Colabore con nuestro programa de Servicio Comunitario HOPE para estabilizar, educar y empoderar a los recién llegados a través de asociaciones.",
+                "desc": "Colabore con nuestro programa de Servicio Comunitario HOPE para estabilizar, educar y empoderar a los inmigrantes y solicitantes de asilo a través de asociaciones.",
                 "cta": "Asóciese con Nosotros",
                 "link": "mailto:hopehasnoborders@gmail.com?subject=Partnership%20Inquiry"
             },
@@ -72,7 +72,7 @@
                 "id": "business",
                 "icon": "briefcase",
                 "title": "Líderes Empresariales",
-                "desc": "Brinde capacitación, pasantías o contrate a recién llegados autorizados para trabajar. Participe en donaciones corporativas y de empleados.",
+                "desc": "Brinde capacitación, pasantías o contrate a inmigrantes y solicitantes de asilo autorizados para trabajar. Participe en donaciones corporativas y de empleados.",
                 "cta": "Conviértase en Socio",
                 "link": "mailto:hopehasnoborders@gmail.com?subject=Corporate%20Engagement"
             },

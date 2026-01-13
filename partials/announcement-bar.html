@@ -1,0 +1,19 @@
+<!-- Announcement Bar - Toggle visibility via JS localStorage -->
+<div id="announcement-bar"
+    class="announcement-bar bg-orange-600 text-white text-center py-2 px-4 text-sm relative z-[60]">
+    <div class="container mx-auto flex items-center justify-center gap-4 flex-wrap">
+        <span class="announcement-message">
+            <span class="mr-2">🚨</span>
+            <span id="announcement-text">Urgent: Winter coat drive this Saturday!</span>
+        </span>
+        <a href="/pages/get-involved.html" id="announcement-cta"
+            class="underline font-semibold hover:text-white/80 transition-colors">
+            Learn More
+        </a>
+        <button onclick="dismissAnnouncement()"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-xl leading-none transition-colors"
+            aria-label="Close announcement">
+            ×
+        </button>
+    </div>
+</div>
