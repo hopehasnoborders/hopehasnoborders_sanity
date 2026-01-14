@@ -1,0 +1,56 @@
+:root {
+    --primary-color: #ea580c;
+    --primary-light: #fff7ed;
+    --primary-dark: #9a3412;
+    --bg-color: #f8fafc;
+    --text-main: #0f172a;
+    --sidebar-bg: #fff;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* Global Overrides */
+body {
+    font-family: var(--font-sans) !important;
+    background-color: var(--bg-color) !important;
+}
+
+/* Sidebar Styling Override */
+.cms-sidebar-brand {
+    font-family: var(--font-serif);
+    font-weight: 700;
+}
+
+/* Button Overrides */
+[class*="Button"] {
+    border-radius: 8px !important;
+    font-family: var(--font-sans) !important;
+}
+
+button[class*="button-default-success"] {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+button[class*="button-default-success"]:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Input Fields */
+input,
+textarea {
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.1) !important;
+}
+
+/* Custom Preview Pane Background */
+#preview-pane {
+    background: #f1f5f9;
+}

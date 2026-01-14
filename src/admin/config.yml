@@ -1,4 +1,4 @@
-# Decap CMS Configuration - Fixed Indentation
+# Decap CMS Configuration
 backend:
   name: git-gateway
   branch: main
@@ -6,7 +6,23 @@ backend:
 media_folder: "src/assets/img"
 public_folder: "/assets/img"
 
+links:
+  - name: "Orders (Snipcart)"
+    url: "https://app.snipcart.com"
+
 collections:
+  - name: "products"
+    label: "Products (Snipcart)"
+    folder: "src/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Product Image", name: "image", widget: "image" }
+      - { label: "ID (SKU)", name: "id", widget: "string", hint: "Unique ID for Snipcart" }
+      - { label: "Active", name: "active", widget: "boolean", default: true }
   - name: "settings"
     label: "Global Settings"
     delete: false
@@ -496,4 +512,6 @@ collections:
       - {label: "Author", name: "author", widget: "string", default: "Hope Borders Team"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
       - {label: "Body", name: "body", widget: "markdown"}

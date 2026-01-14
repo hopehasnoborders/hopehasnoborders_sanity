@@ -5,10 +5,10 @@ permalink: /index.html
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/en/">
+    <meta http-equiv="refresh" content="0; url={{ '/en/' | url }}">
     <title>Redirecting...</title>
 </head>
 <body>
-    <script>window.location.href = "/en/";</script>
+    <script>window.location.href = "{{ '/en/' | url }}";</script>
 </body>
 </html>

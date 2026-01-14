@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: Merch Store
+description: Support our cause by purchasing official merchandise.
+---
+
+<section class="py-20 px-6 bg-orange-50">
+  <div class="container mx-auto text-center">
+    <span class="text-orange-600 font-semibold tracking-wide uppercase text-sm">Shop for a Cause</span>
+    <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mt-2 mb-6">Merch Store</h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+      Every purchase directly supports our mission to provide housing, legal aid, and dignity to those in crisis.
+    </p>
+  </div>
+</section>
+
+<section class="py-20 px-6">
+  <div class="container mx-auto">
+    {% if collections.products.length > 0 %}
+      <div class="grid md:grid-cols-3 gap-8">
+        {% for product in collections.products %}
+          <div class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-gray-100 flex flex-col">
+            <a href="{{ product.url | url }}" class="block overflow-hidden aspect-square">
+              <img src="{{ product.data.image | url }}" alt="{{ product.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                <a href="{{ product.url | url }}" class="hover:text-orange-600 transition-colors">{{ product.data.title }}</a>
+              </h3>
+              <p class="text-gray-600 mb-4 line-clamp-2">{{ product.data.description }}</p>
+              <div class="mt-auto flex items-center justify-between">
+                <span class="text-xl font-bold text-orange-600">${{ product.data.price }}</span>
+                <button
+                  class="snipcart-add-item bg-gray-900 hover:bg-orange-600 text-white p-2 rounded-full transition-colors"
+                  data-item-id="{{ product.data.id }}"
+                  data-item-price="{{ product.data.price }}"
+                  data-item-url="{{ product.url | url }}"
+                  data-item-image="{{ product.data.image | url }}"
+                  data-item-name="{{ product.data.title }}">
+                  <i data-lucide="plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="text-center py-12">
+        <p class="text-gray-500 text-xl">No products available at the moment. Check back soon!</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

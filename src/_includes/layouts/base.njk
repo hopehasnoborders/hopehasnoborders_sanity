@@ -29,7 +29,8 @@
       }
     };
   </script>
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
 </head>
 <body class="antialiased selection:bg-yarrow/30 selection:text-black {{ bodyClass }}">
   
@@ -52,18 +53,20 @@
 
   {% include "partials/footer.njk" %}
 
-  <script src="/assets/js/main.js"></script>
+  <script src="{{ '/assets/js/main.js' | url }}"></script>
   
   <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+          document.location.href = "{{ '/admin/' | url }}";
         });
       }
     });
   }
   </script>
+  <div hidden id="snipcart" data-api-key="MDFlMjM2OWMtYWZkMy00NTk2LTkyYTAtYzQ1ZDYzMDQ4ZDVjNjM5MDM5Njk0Mzk3Mzg0NjU1"></div>
+  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 </body>
 </html>

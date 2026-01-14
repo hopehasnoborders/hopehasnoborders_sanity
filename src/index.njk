@@ -18,8 +18,8 @@ bodyClass: home-page
     <h1 class="text-5xl md:text-7xl lg:text-9xl font-serif text-white mb-8 leading-[0.9] tracking-tight animate-in delay-200">{{ home[lang].hero_main_text | safe }}</h1>
     <p class="text-lg md:text-2xl text-neutral-200 font-light mb-12 max-w-2xl mx-auto leading-relaxed text-balance animate-in delay-300">{{ home[lang].hero_body_text }}</p>
     <div class="flex flex-col sm:flex-row gap-6 justify-center animate-in delay-300">
-      <a href="/{{ lang }}/resources/" class="bg-white text-black px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-yarrow hover:text-black transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_resources }}</a>
-      <a href="/{{ lang }}/about/" class="border border-white/30 backdrop-blur-sm text-white px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_impact }}</a>
+      <a href="{{ ('/' + lang + '/resources/') | url }}" class="bg-white text-black px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_resources }}</a>
+      <a href="{{ ('/' + lang + '/about/') | url }}" class="border border-white/30 backdrop-blur-sm text-white px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_impact }}</a>
     </div>
   </div>
 </header>
@@ -77,9 +77,9 @@ bodyClass: home-page
     <div class="container mx-auto px-6 text-center">
          <h2 class="text-3xl font-serif mb-12">{{ home[lang].cta_title }}</h2>
          <div class="flex flex-col md:flex-row justify-center gap-6">
-             <a href="/{{ lang }}/resources/" class="bg-white border border-neutral-300 px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_need_help }}</a>
-             <a href="/{{ lang }}/volunteer/" class="bg-white border border-neutral-300 px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_volunteer }}</a>
-             <a href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L" target="_blank" class="bg-yarrow border border-yarrow text-black px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_donate_cta }}</a>
+             <a href="{{ ('/' + lang + '/resources/') | url }}" class="bg-white border border-neutral-300 px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_need_help }}</a>
+             <a href="{{ ('/' + lang + '/volunteer/') | url }}" class="bg-white border border-neutral-300 px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_volunteer }}</a>
+             <a href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L" target="_blank" class="bg-orange-600 border border-orange-600 text-white px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:border-black transition-all">{{ home[lang].btn_donate_cta }}</a>
          </div>
     </div>
 </section>

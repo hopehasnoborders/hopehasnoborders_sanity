@@ -1,15 +1,15 @@
 <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-out bg-white/95 backdrop-blur-md text-black shadow-sm py-4">
     <div class="container mx-auto px-6 flex justify-between items-center">
-        <a href="/{{ lang }}/" class="cursor-pointer z-50 hover:opacity-80 transition-opacity w-32 md:w-48">
-            <img src="/assets/img/HOPE_Logo_A_Black_3x.avif" alt="Hope Has No Borders" id="nav-logo" class="w-full h-auto logo-normal logo-target object-contain" />
+        <a href="{{ ('/' + lang + '/') | url }}" class="cursor-pointer z-50 hover:opacity-80 transition-opacity w-32 md:w-48">
+            <img src="{{ '/assets/img/HOPE_Logo_A_Black_3x.avif' | url }}" alt="Hope Has No Borders" id="nav-logo" class="w-full h-auto logo-normal logo-target object-contain" />
         </a>
 
         <div class="hidden lg:flex items-center gap-8 font-medium text-xs tracking-widest">
-            <a href="/{{ lang }}/about/" class="nav-link uppercase hover:text-yarrow transition-colors relative group">{{ i18n[lang].nav_about }}</a>
-            <a href="/{{ lang }}/programs/" class="nav-link uppercase hover:text-yarrow transition-colors relative group">{{ i18n[lang].nav_programs }}</a>
-            <a href="/{{ lang }}/resources/" class="nav-link uppercase hover:text-yarrow transition-colors relative group">{{ i18n[lang].nav_resources }}</a>
-            <a href="/{{ lang }}/blog/" class="nav-link uppercase hover:text-yarrow transition-colors relative group">{{ i18n[lang].nav_blog }}</a>
-            <a href="/{{ lang }}/volunteer/" class="nav-link uppercase hover:text-yarrow transition-colors relative group">{{ i18n[lang].nav_volunteer }}</a>
+            <a href="{{ ('/' + lang + '/about/') | url }}" class="nav-link uppercase hover:text-orange-600 transition-colors relative group">{{ i18n[lang].nav_about }}</a>
+            <a href="{{ ('/' + lang + '/programs/') | url }}" class="nav-link uppercase hover:text-orange-600 transition-colors relative group">{{ i18n[lang].nav_programs }}</a>
+            <a href="{{ ('/' + lang + '/resources/') | url }}" class="nav-link uppercase hover:text-orange-600 transition-colors relative group">{{ i18n[lang].nav_resources }}</a>
+            <a href="{{ ('/' + lang + '/blog/') | url }}" class="nav-link uppercase hover:text-orange-600 transition-colors relative group">{{ i18n[lang].nav_blog }}</a>
+            <a href="{{ ('/' + lang + '/volunteer/') | url }}" class="nav-link uppercase hover:text-orange-600 transition-colors relative group">{{ i18n[lang].nav_volunteer }}</a>
             
             <!-- Language Switcher -->
             <a href="{{ i18n[lang].lang_switch_url }}{{ page.url | replace('/en/', '') | replace('/es/', '') }}" 
@@ -33,11 +33,11 @@
 </nav>
 
 <div id="mobile-menu" class="fixed inset-0 bg-white text-black z-40 flex flex-col items-center justify-center gap-8 hidden opacity-0 transition-opacity duration-300">
-    <a href="/{{ lang }}/about/" class="text-3xl font-serif font-light capitalize hover:text-yarrow transition-colors">{{ i18n[lang].nav_about }}</a>
-    <a href="/{{ lang }}/programs/" class="text-3xl font-serif font-light capitalize hover:text-yarrow transition-colors">{{ i18n[lang].nav_programs }}</a>
-    <a href="/{{ lang }}/resources/" class="text-3xl font-serif font-light capitalize hover:text-yarrow transition-colors">{{ i18n[lang].nav_resources }}</a>
-    <a href="/{{ lang }}/blog/" class="text-3xl font-serif font-light capitalize hover:text-yarrow transition-colors">{{ i18n[lang].nav_blog }}</a>
-    <a href="/{{ lang }}/volunteer/" class="text-3xl font-serif font-light capitalize hover:text-yarrow transition-colors">{{ i18n[lang].nav_volunteer }}</a>
+    <a href="{{ ('/' + lang + '/about/') | url }}" class="text-3xl font-serif font-light capitalize hover:text-orange-600 transition-colors">{{ i18n[lang].nav_about }}</a>
+    <a href="{{ ('/' + lang + '/programs/') | url }}" class="text-3xl font-serif font-light capitalize hover:text-orange-600 transition-colors">{{ i18n[lang].nav_programs }}</a>
+    <a href="{{ ('/' + lang + '/resources/') | url }}" class="text-3xl font-serif font-light capitalize hover:text-orange-600 transition-colors">{{ i18n[lang].nav_resources }}</a>
+    <a href="{{ ('/' + lang + '/blog/') | url }}" class="text-3xl font-serif font-light capitalize hover:text-orange-600 transition-colors">{{ i18n[lang].nav_blog }}</a>
+    <a href="{{ ('/' + lang + '/volunteer/') | url }}" class="text-3xl font-serif font-light capitalize hover:text-orange-600 transition-colors">{{ i18n[lang].nav_volunteer }}</a>
     
     <a href="{{ i18n[lang].lang_switch_url }}{{ page.url | replace('/en/', '') | replace('/es/', '') }}" class="text-lg font-bold uppercase tracking-widest text-neutral-500 hover:text-yarrow transition-colors">
         Switch to {{ i18n[lang].lang_switch_label }}
