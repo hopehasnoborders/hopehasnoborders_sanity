@@ -4,5 +4,5 @@ node_modules/
 _site/
 studio/node_modules/
 studio/dist/
-web/
-.next/
+web/node_modules/
+web/.next/
