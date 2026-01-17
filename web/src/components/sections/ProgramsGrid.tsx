@@ -39,7 +39,7 @@ export function ProgramsGrid({ header, programs }: ProgramsGridProps) {
         <section className="py-32 bg-white">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20 max-w-3xl mx-auto">
-                    <span className="text-[#FFB81C] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
+                    <span className="text-[var(--yarrow)] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
                         {t(header.eyebrow)}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-serif leading-tight text-neutral-900 antialiased">
