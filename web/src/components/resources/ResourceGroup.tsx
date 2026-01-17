@@ -20,16 +20,23 @@ const IconMap: any = {
     grad: GraduationCap
 }
 
-export function ResourceGroup({ category, defaultOpen = false }: { category: ResourceCategory, defaultOpen?: boolean }) {
-    const [isOpen, setIsOpen] = useState(defaultOpen)
+export function ResourceGroup({
+    category,
+    isOpen,
+    onToggle
+}: {
+    category: ResourceCategory,
+    isOpen: boolean,
+    onToggle: () => void
+}) {
     const { t } = useLanguage()
     const Icon = IconMap[category.icon] || Home
 
     return (
         <div id={category.id} className="border-b border-neutral-200 last:border-0 scroll-mt-32">
             <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full py-8 flex items-center justify-between group hover:bg-neutral-50 transition-colors px-4 rounded-sm"
+                onClick={onToggle}
+                className={`w-full py-8 flex items-center justify-between group hover:bg-neutral-50 transition-colors px-4 rounded-sm ${isOpen ? 'bg-neutral-50' : ''}`}
             >
                 <div className="flex items-center gap-6">
                     <div className={`p-3 rounded-full bg-neutral-100 text-neutral-500 group-hover:bg-[var(--yarrow)] group-hover:text-white transition-all duration-300`}>

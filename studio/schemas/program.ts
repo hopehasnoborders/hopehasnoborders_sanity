@@ -38,6 +38,34 @@ export default defineType({
                 ],
             },
         }),
+        defineField({
+            name: 'image',
+            title: 'Program Image',
+            type: 'image',
+            group: 'content',
+            options: { hotspot: true },
+            description: 'Image used in the Impact Section panels',
+        }),
+        defineField({
+            name: 'impactMetrics',
+            title: 'Impact Metrics',
+            type: 'array',
+            group: 'content',
+            description: 'Key statistics for this program (e.g. "667 people supported")',
+            of: [{
+                type: 'object',
+                fields: [
+                    defineField({ name: 'value', title: 'Value', type: 'string', description: 'e.g. "667" or "$36,770"' }),
+                    i18nString('label', 'Label', 'content'),
+                ],
+                preview: {
+                    select: {
+                        title: 'value',
+                        subtitle: 'label.en'
+                    }
+                }
+            }]
+        }),
         i18nString('action', 'Action Button Text', 'content'),
         defineField({
             name: 'order',

@@ -9,6 +9,7 @@ export default defineType({
     groups: [
         { name: 'hero', title: 'Hero Section' },
         { name: 'stats', title: 'Stats Bar' },
+        { name: 'impact', title: 'Impact Section' },
         { name: 'services', title: 'Services Section' },
         { name: 'testimonials', title: 'Testimonials Section' },
         { name: 'seo', title: '🔍 SEO' },
@@ -49,6 +50,80 @@ export default defineType({
                     ],
                 }),
             ],
+        }),
+
+        // IMPACT SECTION
+        defineField({
+            name: 'impactSection',
+            title: 'Impact Section',
+            type: 'object',
+            group: 'impact',
+            fields: [
+                i18nString('title', 'Section Title'),
+                i18nText('subtitle', 'Section Subtitle'),
+                // Key Metrics Grid
+                defineField({
+                    name: 'keyMetrics',
+                    title: 'Key Metrics Grid',
+                    type: 'array',
+                    of: [{
+                        type: 'object',
+                        fields: [
+                            defineField({ name: 'value', title: 'Value (Number)', type: 'number' }),
+                            defineField({ name: 'prefix', title: 'Prefix (e.g. $)', type: 'string' }),
+                            defineField({ name: 'suffix', title: 'Suffix (e.g. %)', type: 'string' }),
+                            i18nString('label', 'Label'),
+                        ],
+                        preview: {
+                            select: { title: 'label.en', subtitle: 'value' }
+                        }
+                    }],
+                    validation: Rule => Rule.max(4)
+                }),
+                // Outcome Metrics Strip
+                defineField({
+                    name: 'outcomeMetrics',
+                    title: 'Outcome Metrics Strip',
+                    type: 'array',
+                    of: [{
+                        type: 'object',
+                        fields: [
+                            defineField({ name: 'value', title: 'Value (String, e.g. 78%)', type: 'string' }),
+                            i18nString('label', 'Label'),
+                        ],
+                        preview: {
+                            select: { title: 'label.en', subtitle: 'value' }
+                        }
+                    }]
+                }),
+                // Programs List
+                defineField({
+                    name: 'programs',
+                    title: 'Impact Programs',
+                    type: 'array',
+                    description: 'Select programs to feature in the Impact Section',
+                    of: [{ type: 'reference', to: [{ type: 'program' }] }]
+                }),
+                // Testimonials
+                defineField({
+                    name: 'testimonials',
+                    title: 'Voices of Impact',
+                    type: 'array',
+                    description: 'Select testimonials for the carousel',
+                    of: [{ type: 'reference', to: [{ type: 'testimonial' }] }]
+                }),
+                // Closing CTA
+                defineField({
+                    name: 'closingCTA',
+                    title: 'Closing CTA',
+                    type: 'object',
+                    fields: [
+                        i18nString('text', 'Button Text'),
+                        defineField({ name: 'link', title: 'Button Link', type: 'string' }),
+                        i18nString('message', 'Message (e.g. "We couldn\'t do this without your support")')
+                    ]
+                })
+            ]
         }),
 
         // STATS

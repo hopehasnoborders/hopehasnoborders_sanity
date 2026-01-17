@@ -83,7 +83,7 @@ const teamMembers: TeamMember[] = [
         name: 'Heather Carlson',
         role: { en: 'Board Member', es: 'Miembro de la Junta' },
         bio: {
-            en: 'Heather Carlson is a seasoned professional with a 20-year career at Albertsons Companies and a dedicated advocate for community support. She has served for many years on the Denver Friends Church leadership team, contributing to children\'s programs, outreach, and newcomer integration.',
+            en: 'Heather Carlson is a seasoned professional with a 20-year career at Albertsons Companies and a dedicated advocate for community support. She has served for many years on the Denver Friends Church leadership team, contributing to children\'s programs, outreach, and immigrant integration.',
             es: 'Heather Carlson es una profesional experimentada con una carrera de 20 años en Albertsons Companies y una dedicada defensora del apoyo comunitario.'
         },
         image: '/img/webportrait_heather.png',
@@ -105,8 +105,8 @@ const teamMembers: TeamMember[] = [
         name: 'Cassandra "Cassi" Coleman',
         role: { en: 'Bilingual Contractor', es: 'Contratista Bilingüe' },
         bio: {
-            en: 'Cassandra "Cassi" Coleman is a licensed practical nurse with more than 16 years of experience in healthcare and a deep passion for serving migrant and asylum-seeking communities. Bilingual in Spanish and English and certified as an American Red Cross trainer.',
-            es: 'Cassandra "Cassi" Coleman es una enfermera práctica licenciada con más de 16 años de experiencia en atención médica y una profunda pasión por servir a las comunidades migrantes y solicitantes de asilo.'
+            en: 'Cassandra "Cassi" Coleman is a licensed practical nurse with more than 16 years of experience in healthcare and a deep passion for serving immigrant and asylum-seeking communities. Bilingual in Spanish and English and certified as an American Red Cross trainer.',
+            es: 'Cassandra "Cassi" Coleman es una enfermera práctica licenciada con más de 16 años de experiencia en atención médica y una profunda pasión por servir a las comunidades inmigrantes y solicitantes de asilo.'
         },
         image: '/img/webportrait_cassandra.png',
         category: 'contractor',
@@ -116,8 +116,8 @@ const teamMembers: TeamMember[] = [
         name: 'Amanda Burr',
         role: { en: 'Bilingual Contractor', es: 'Contratista Bilingüe' },
         bio: {
-            en: 'Amanda Burr is an immigration advocate dedicated to empowering migrant communities through mentorship, language access, and navigation support. After a 25-year career in marketing, she now channels her skills and empathy into helping immigrants thrive.',
-            es: 'Amanda Burr es una defensora de la inmigración dedicada a empoderar a las comunidades migrantes a través de mentoría, acceso al idioma y apoyo de navegación.'
+            en: 'Amanda Burr is an immigration advocate dedicated to empowering immigrant communities through mentorship, language access, and navigation support. After a 25-year career in marketing, she now channels her skills and empathy into helping immigrants thrive.',
+            es: 'Amanda Burr es una defensora de la inmigración dedicada a empoderar a las comunidades inmigrantes a través de mentoría, acceso al idioma y apoyo de navegación.'
         },
         image: '/img/webportrait_amanda.png',
         category: 'contractor',

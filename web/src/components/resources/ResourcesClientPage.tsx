@@ -10,7 +10,36 @@ import { useLanguage } from '@/lib/LanguageContext'
 
 export function ResourcesClientPage() {
     const [searchQuery, setSearchQuery] = useState('')
+    const [expandedIds, setExpandedIds] = useState<string[]>(['general']) // Default open first one
     const { t } = useLanguage()
+
+    const toggleCategory = (id: string) => {
+        setExpandedIds(prev =>
+            prev.includes(id)
+                ? prev.filter(p => p !== id)
+                : [...prev, id]
+        )
+    }
+
+    const handleCategorySelect = (id: string) => {
+        if (!expandedIds.includes(id)) {
+            setExpandedIds(prev => [...prev, id])
+        }
+        // Small timeout to allow state update/rendering to happen before scroll if needed
+        setTimeout(() => {
+            const element = document.getElementById(id)
+            if (element) {
+                const headerOffset = 100
+                const elementPosition = element.getBoundingClientRect().top
+                const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                })
+            }
+        }, 50)
+    }
 
     // Filter resources
     const filteredCategories = resourceCategories.map(cat => {
@@ -44,7 +73,7 @@ export function ResourcesClientPage() {
         <main className="bg-white min-h-screen pb-24">
             <ResourcesHero />
 
-            <IntentTiles />
+            <IntentTiles onCategorySelect={handleCategorySelect} />
 
             <div className="container mx-auto px-6 relative z-10">
                 <ResourceSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
@@ -52,7 +81,12 @@ export function ResourcesClientPage() {
                 <div className="max-w-4xl mx-auto border-t border-neutral-200">
                     {filteredCategories.length > 0 ? (
                         filteredCategories.map((category, i) => (
-                            <ResourceGroup key={category.id} category={category} defaultOpen={i === 0 || !!searchQuery} />
+                            <ResourceGroup
+                                key={category.id}
+                                category={category}
+                                isOpen={expandedIds.includes(category.id) || !!searchQuery}
+                                onToggle={() => toggleCategory(category.id)}
+                            />
                         ))
                     ) : (
                         <div className="text-center py-20 text-neutral-400 font-light">

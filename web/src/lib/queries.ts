@@ -35,6 +35,27 @@ export const homePageQuery = groq`
     hero,
     stats,
     videoSection,
+    impactSection {
+      title,
+      subtitle,
+      keyMetrics,
+      outcomeMetrics,
+      closingCTA,
+      programs[]->{
+        _id,
+        title,
+        summary,
+        image,
+        impactMetrics
+      },
+      testimonials[]->{
+        _id,
+        quote,
+        author,
+        location,
+        image
+      }
+    },
     servicesSection,
     testimonialSection,
     seo

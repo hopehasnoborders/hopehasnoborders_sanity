@@ -42,7 +42,7 @@ const intents: Intent[] = [
     }
 ]
 
-export function IntentTiles() {
+export function IntentTiles({ onCategorySelect }: { onCategorySelect: (id: string) => void }) {
     const { t } = useLanguage()
 
     return (
@@ -53,7 +53,7 @@ export function IntentTiles() {
                     return (
                         <button
                             key={i}
-                            onClick={() => document.getElementById(intent.targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                            onClick={() => onCategorySelect(intent.targetId)}
                             className={`p-8 rounded-sm bg-white border shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left group`}
                         >
                             <div className={`w-12 h-12 rounded-full ${intent.color} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>

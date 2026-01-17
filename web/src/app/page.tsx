@@ -33,6 +33,8 @@ export default async function Home() {
     <div className="flex flex-col">
       <Hero hero={home?.hero} />
 
+      <ImpactSection data={home?.impactSection} />
+
       <VideoSection video={home?.videoSection} />
 
       <ProgramsGrid
