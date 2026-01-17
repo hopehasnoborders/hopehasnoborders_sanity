@@ -193,20 +193,20 @@ export function ImpactSection({ data }: ImpactSectionProps) {
 
                 {/* 2. Key Metrics Grid */}
                 {content.keyMetrics && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mt-16 md:mt-20">
                         {content.keyMetrics.map((metric, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                                className="bg-white/5 border border-white/10 p-8 rounded-sm hover:border-[var(--yarrow)]/50 transition-colors group relative overflow-hidden"
+                                className="bg-white/5 border border-white/10 p-4 md:p-8 rounded-lg hover:border-[var(--yarrow)]/50 transition-colors group relative overflow-hidden"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--yarrow)]/0 to-[var(--yarrow)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <h3 className="text-4xl md:text-5xl font-bold text-[var(--yarrow)] mb-2 relative z-10">
+                                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--yarrow)] mb-1 md:mb-2 relative z-10 whitespace-nowrap">
                                     <CountUp value={metric.value} prefix={metric.prefix} suffix={metric.suffix} />
                                 </h3>
-                                <p className="text-neutral-300 font-medium tracking-wide text-sm relative z-10">
+                                <p className="text-neutral-300 font-medium tracking-wide text-xs md:text-sm relative z-10 leading-tight">
                                     {t(metric.label)}
                                 </p>
                             </motion.div>
