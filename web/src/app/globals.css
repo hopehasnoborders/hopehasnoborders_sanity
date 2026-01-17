@@ -48,39 +48,60 @@
 
 :root {
   --radius: 0.625rem;
-  --yarrow: #FFB81C;
-  --yarrow-600: #E5A519;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+
+  /* Brand Colors */
+  --forrest: #19381E;
+  --bone: #FFF3EA;
+  --sky: #75A3D6;
+  --yarrow: #C7D400;
+  /* Updated from #FFB81C */
+
+  /* Theme Mapping */
+  --background: var(--bone);
+  /* Main light background */
+  --foreground: var(--forrest);
+  /* Main text color */
+
+  --card: #FFFFFF;
+  --card-foreground: var(--forrest);
+
+  --popover: #FFFFFF;
+  --popover-foreground: var(--forrest);
+
+  --primary: var(--forrest);
+  --primary-foreground: #FFFFFF;
+
+  --secondary: var(--bone);
+  --secondary-foreground: var(--forrest);
+
+  --muted: #F5F5F0;
+  /* Slightly darker than bone for separation */
+  --muted-foreground: #4A5D4E;
+  /* Forrest tint */
+
+  --accent: var(--sky);
+  --accent-foreground: var(--forrest);
+
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  --border: #E6E6E0;
+  --input: #E6E6E0;
+  --ring: var(--yarrow);
+
+  --chart-1: var(--forrest);
+  --chart-2: var(--sky);
+  --chart-3: var(--yarrow);
+  --chart-4: #4A5D4E;
+  --chart-5: #E6E6E0;
+
+  --sidebar: var(--forrest);
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: var(--yarrow);
+  --sidebar-primary-foreground: var(--forrest);
+  --sidebar-accent: #2A4D30;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--yarrow);
 }
 
 .dark {
