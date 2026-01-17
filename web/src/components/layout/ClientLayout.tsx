@@ -53,9 +53,14 @@ function AnnouncementBarClient({ announcement }: { announcement: NonNullable<Cli
         }
     }
 
-    const label = announcement.label ? t(announcement.label) : 'Urgent:'
-    const text = t(announcement.text)
-    const linkText = announcement.linkText ? t(announcement.linkText) : 'Act Now'
+    const label = announcement?.label ? t(announcement.label) : 'Urgent:'
+    const text = announcement?.text ? t(announcement.text) : ''
+    const linkText = announcement?.linkText ? t(announcement.linkText) : 'Act Now'
+
+    // Don't render if text is empty
+    if (!text) {
+        return null
+    }
 
     // Reusable component for the repeating message
     const BannerContent = () => (
