@@ -39,11 +39,11 @@ export function Navigation() {
                     className="z-50"
                 >
                     <Image
-                        src="/img/HOPE_Logo_A_Black_3x.avif"
+                        src={scrolled || isOpen ? "/img/logo-forrest.png" : "/img/logo-bone.png"}
                         alt="Hope Has No Borders"
-                        width={120}
-                        height={40}
-                        className={`h-10 w-auto transition-all duration-500 ${scrolled || isOpen ? '' : 'invert'}`}
+                        width={180}
+                        height={60}
+                        className="h-10 w-auto transition-all duration-500"
                         priority
                     />
                 </Link>
