@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
 import { ArrowRight, Quote } from 'lucide-react'
 import Link from 'next/link'
-import { urlForImage } from '@/lib/sanity'
+import { urlFor as urlForImage } from '@/lib/sanity'
 
 // --- Interfaces ---
 interface KeyMetric {
