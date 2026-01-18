@@ -17,8 +17,8 @@ interface ClientLayoutProps {
         active: boolean
         scrollSpeed?: number // Controls duration
         size?: 'normal' | 'large' | 'xl'
-        textColor?: string
-        backgroundColor?: string
+        textColor?: any
+        backgroundColor?: any
         label?: { en: string; es: string }
         text: { en: string; es: string }
         linkText?: { en: string; es: string }
@@ -90,8 +90,8 @@ function AnnouncementBarClient({ announcement }: { announcement: NonNullable<Cli
     // Dynamic Styles based on props
     const speed = announcement.scrollSpeed || DEFAULT_BANNER_CONFIG.DURATION
     const bannerSize = announcement.size || 'normal'
-    const customTextColor = announcement.textColor || 'inherit'
-    const customBgColor = announcement.backgroundColor || '#FFB81C'
+    const customTextColor = announcement.textColor?.hex || announcement.textColor || 'inherit'
+    const customBgColor = announcement.backgroundColor?.hex || announcement.backgroundColor || '#FFB81C'
 
     // Size mappings
     const heightClass = bannerSize === 'xl' ? 'h-16' : bannerSize === 'large' ? 'h-12' : 'h-10'
